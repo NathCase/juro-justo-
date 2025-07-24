@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #2C3E50;
+  --primary-hover: #1B2A38;
+  --secondary-color: #00A896;
+  --secondary-hover: #008B7A;
+  --alert-color: #F76C5E;
+  --success-color: #00D084;
+  --text-primary: #2C3E50;
+  --text-secondary: #636E72;
+  --bg-white: #FFFFFF;
+  --bg-light: #F1F2F6;
+  --border-color: #D1D5DB;
+  --gradient-primary: linear-gradient(45deg, #2C3E50, #00A896);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.font-primary {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-secondary {
+  font-family: 'Nunito', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.gradient-bg {
+  background: var(--gradient-primary);
+}
+
+.text-primary-custom {
+  color: var(--primary-color);
+}
+
+.text-secondary-custom {
+  color: var(--text-secondary);
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.bg-secondary:hover {
+  background-color: var(--secondary-hover);
+}
+
+.bg-alert {
+  background-color: var(--alert-color);
+}
+
+.bg-success {
+  background-color: var(--success-color);
+}
+
+.bg-light-custom {
+  background-color: var(--bg-light);
+}
+
+.border-custom {
+  border-color: var(--border-color);
+}
+
+.btn-primary {
+  @apply bg-primary text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.result-card {
+  @apply p-6 rounded-xl shadow-lg transition-all duration-300;
+}
+
+.result-controlled {
+  @apply bg-green-50 border-2 border-green-200;
+}
+
+.result-improvement {
+  @apply bg-yellow-50 border-2 border-yellow-200;
+}
+
+.result-opportunity {
+  @apply bg-red-50 border-2 border-red-200;
+}
+
+@media (max-width: 768px) {
+  .container {
+    @apply px-4;
+  }
+  
+  h1 {
+    @apply text-3xl;
+  }
+  
+  h2 {
+    @apply text-2xl;
+  }
+}
